@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'session/login'
+
+  get 'session/logout'
+
+  root 'teachers#dashboard'
   resources :grades
   resources :parents
   resources :students
