@@ -2,12 +2,12 @@
 
 one:
   teacher_id: 1
-  name: MyString
-  email: MyString
-  password_digest: MyString
+  name: alexa
+  email: alexa@gmail.com
+  password_digest: <%= BCrypt::Password.create("password")%>
 
 two:
   teacher_id: 1
-  name: MyString
-  email: MyString
-  password_digest: MyString
+  name: brad
+  email: brad@gmail.com
+  password_digest: <%= BCrypt::Password.create("password")%>

@@ -1,4 +1,5 @@
 class TeachersController < ApplicationController
+  before_action :logged_in?
   before_action :set_teacher, only: [:show, :edit, :update, :destroy]
 
   # GET /teachers
@@ -69,6 +70,15 @@ class TeachersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def teacher_params
-      params.require(:teacher).permit(:name, :email, :password_digest)
+      params.require(:teacher).permit(:name, :email, :password)
     end
+
+
+    def logged_in?
+      if Teacher.find_by_id(session[:teacher_id])
+			else
+				redirect_to session_login_path, notice: 'Message Here'
+			end
+    end
+
 end

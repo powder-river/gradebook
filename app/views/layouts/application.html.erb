@@ -7,7 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <span class="educator_options">
+    <%= link_to "Logout", session_logout_path  %> |
+  
+  </span>
 <%= yield %>
 
 </body>
